@@ -6,8 +6,8 @@ namespace OpenTelemetry\Test\Unit\Aws\Ecs;
 
 use OpenTelemetry\Aws\Ecs\DataProvider;
 use OpenTelemetry\Aws\Ecs\Detector;
+use OpenTelemetry\SDK\Attributes;
 use OpenTelemetry\SDK\Resource\ResourceInfo;
-use OpenTelemetry\SDK\Trace\Attributes;
 use OpenTelemetry\SemConv\ResourceAttributes;
 use PHPUnit\Framework\TestCase;
 

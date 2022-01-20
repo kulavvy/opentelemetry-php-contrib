@@ -57,7 +57,7 @@ class OtelSdkExtensionTest extends TestCase
     {
         $data = $this->loadTestData('resource');
 
-        $limits = $this->getDefinitionByClass(SDK\Trace\AttributeLimits::class);
+        $limits = $this->getDefinitionByClass(SDK\AttributeLimits::class);
 
         $this->assertEquals(
             array_values($data['resource']['limits']),
@@ -77,14 +77,14 @@ class OtelSdkExtensionTest extends TestCase
             $params[Parameters::RESOURCE_ATTRIBUTES]
         );
 
-        $arguments = $this->getDefinitionByClass(SDK\Trace\Attributes::class)
+        $arguments = $this->getDefinitionByClass(SDK\Attributes::class)
             ->getArguments();
 
         $this->assertSame(
             ConfigHelper::wrapParameter(Parameters::RESOURCE_ATTRIBUTES),
             $arguments[0]
         );
-        $this->assertReference(SDK\Trace\AttributeLimits::class, $arguments[1]);
+        $this->assertReference(SDK\AttributeLimits::class, $arguments[1]);
     }
 
     public function testDefaultSampler(): void
@@ -250,7 +250,7 @@ class OtelSdkExtensionTest extends TestCase
             if ($this->getClassFromReference($processorReference) === SpanProcessor\BatchSpanProcessor::class) {
                 $definition = $this->container->getDefinition((string) $processorReference);
                 $this->assertIsReferenceForClass(
-                    SDK\Trace\SystemClock::class,
+                    SDK\SystemClock::class,
                     $definition->getArgument(1)
                 );
                 $batchProcessors++;

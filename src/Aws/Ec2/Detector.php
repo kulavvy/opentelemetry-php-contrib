@@ -22,8 +22,8 @@ namespace OpenTelemetry\Aws\Ec2;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+use OpenTelemetry\SDK\Attributes;
 use OpenTelemetry\SDK\Resource\ResourceInfo;
-use OpenTelemetry\SDK\Trace\Attributes;
 use OpenTelemetry\SemConv\ResourceAttributes;
 use Throwable;
 
